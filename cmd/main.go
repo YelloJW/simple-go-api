@@ -6,9 +6,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-
-
-
 func main() {
 	db.Connect()
 	router := gin.New()

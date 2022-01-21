@@ -12,5 +12,5 @@ func main() {
 	router.POST("/users", handlers.PostUsers)
 	router.GET("/users", handlers.GetUsers)
 	router.Run("localhost:8081")
-	db.DB.Close()
+	// db.DB.Close()
 }

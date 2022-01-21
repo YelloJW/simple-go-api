@@ -16,7 +16,7 @@ func PostUsers(c *gin.Context)  {
 	var payload PostUserPayload
 
 	if err := c.ShouldBindJSON(&payload); err != nil {
-		c.IndentedJSON(http.StatusBadRequest, gin.H{"error": err})
+		c.IndentedJSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 	}
 
 	var user = models.User{Name: payload.Name}

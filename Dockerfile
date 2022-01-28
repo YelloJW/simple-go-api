@@ -2,8 +2,8 @@
 FROM golang:1.17-alpine as builder
 WORKDIR /app
 COPY . .
-RUN apk add --update build-base
-RUN make build
+RUN apk add --no-cache build-base &&\
+    make build
 
 FROM golang:1.17-alpine
 WORKDIR /app

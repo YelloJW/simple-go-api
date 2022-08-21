@@ -1,0 +1,25 @@
+# auto created by skaffold init -  see https://skaffold.dev/docs/references/yaml/
+apiVersion: skaffold/v2beta29
+kind: Config
+metadata:
+  name: simple-go-api
+
+# describes how images are built
+build:
+  artifacts:
+    - image: simple-go-image
+      docker:
+        dockerfile: Dockerfile
+
+# describes how images are deployed
+deploy:
+  kustomize:
+    paths:
+      - k8s/simple-go-api/dev
+
+portForward:
+  - resourceType: deployment
+    resourceName: simple-go-deployment
+    namespace: simple-go-ns
+    port: 8081
+    localPort: 9000

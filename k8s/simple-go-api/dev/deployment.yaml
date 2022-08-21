@@ -1,0 +1,7 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-go-deployment
+  namespace: simple-go-ns
+spec:
+  replicas: 2

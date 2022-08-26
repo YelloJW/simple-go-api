@@ -1,9 +1,9 @@
 # syntax=docker/dockerfile:1
 FROM golang:1.17-alpine as builder
 WORKDIR /app
+RUN apk add --no-cache build-base
 COPY . .
-RUN apk add --no-cache build-base &&\
-    make build
+RUN make build
 
 FROM golang:1.17-alpine
 WORKDIR /app

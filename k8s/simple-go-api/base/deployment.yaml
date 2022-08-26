@@ -18,3 +18,9 @@ spec:
           image: simple-go-image
           ports:
             - containerPort: 8081
+          env:
+            - name: ENV
+              valueFrom:
+                configMapKeyRef:
+                  name: deployment-env
+                  key: ENV

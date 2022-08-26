@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/YelloJW/simple-rest-api/app/packages/db"
-	"github.com/YelloJW/simple-rest-api/app/packages/db/models"
+	"github.com/YelloJW/simple-rest-api/app/shared/db"
+	"github.com/YelloJW/simple-rest-api/app/users/infrastructure/models"
 	"github.com/gin-gonic/gin"
 )
 

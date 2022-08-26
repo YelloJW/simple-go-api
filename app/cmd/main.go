@@ -3,17 +3,17 @@ package main
 import (
 	"fmt"
 
-	"github.com/YelloJW/simple-rest-api/app/packages/controllers"
-	"github.com/YelloJW/simple-rest-api/app/packages/db"
-	"github.com/YelloJW/simple-rest-api/app/packages/env"
+	"github.com/YelloJW/simple-rest-api/app/shared/db"
+	"github.com/YelloJW/simple-rest-api/app/shared/env"
+	"github.com/YelloJW/simple-rest-api/app/users/infrastructure/controllers"
 
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	db.Connect()
-	env := env.Load()
+	db.Init()
 	defer db.DB.Close()
+	env := env.New()
 	
 	router := gin.New()
 	v1 := router.Group("/api/v1")
@@ -29,7 +29,7 @@ func main() {
 		}
 	}
 
-	router.Run("localhost:8081")
+	router.Run(":8081")
 }
 
 

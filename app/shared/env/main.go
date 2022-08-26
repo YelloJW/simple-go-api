@@ -11,10 +11,10 @@ type environment struct {
 	Env string
 }
 
-func Load() environment {
+func New() *environment {
 	err := godotenv.Load()
 	if err != nil {
 		fmt.Println(err)
 	}
-	return environment{Env: os.Getenv("ENV")}
+	return &environment{Env: os.Getenv("ENV")}
 }

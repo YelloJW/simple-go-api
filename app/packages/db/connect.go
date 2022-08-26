@@ -1,7 +1,7 @@
 package db
 
 import (
-	"github.com/YelloJW/simple-rest-api/pkg/db/models"
+	"github.com/YelloJW/simple-rest-api/app/packages/db/models"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
 )

@@ -5,10 +5,10 @@ run:
 	go run cmd/main.go
 
 build:
-	go build cmd/main.go 
+	go build app/cmd/main.go 
 
 docker-build: 
-	docker build -t simple-go-image:dev .
+	docker build -t simple-go-image .
 
 kind-create:
 	kind create cluster \
@@ -23,11 +23,11 @@ kind-load:
 
 # Generates a yaml using base and overlays
 kustomize-build: 
-	kustomize build k8s/simple-go-api/dev
+	kustomize build k8s/simple-go-api/overlays/dev
 
 # Pipe generated yaml to kubectl apply
 kustomize-apply: 
-	kustomize build k8s/simple-go-api/dev | kubectl apply -f -
+	kustomize build k8s/simple-go-api/overlays/dev | kubectl apply -f -
 
 skaffold-init:
 	skaffold init

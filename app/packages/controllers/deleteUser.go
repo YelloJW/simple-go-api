@@ -3,8 +3,8 @@ package controllers
 import (
 	"net/http"
 
-	"github.com/YelloJW/simple-rest-api/pkg/db"
-	"github.com/YelloJW/simple-rest-api/pkg/db/models"
+	"github.com/YelloJW/simple-rest-api/app/packages/db"
+	"github.com/YelloJW/simple-rest-api/app/packages/db/models"
 	"github.com/gin-gonic/gin"
 )
 

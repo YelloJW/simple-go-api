@@ -15,7 +15,7 @@ build:
 deploy:
   kustomize:
     paths:
-      - k8s/simple-go-api/dev
+      - k8s/simple-go-api/overlays/dev
 
 portForward:
   - resourceType: deployment

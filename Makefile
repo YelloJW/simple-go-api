@@ -2,7 +2,7 @@ tidy:
 	go mod tidy
 
 run:
-	go run cmd/main.go
+	go run app/cmd/main.go
 
 build:
 	go build app/cmd/main.go 
